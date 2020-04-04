@@ -4,10 +4,8 @@
 ## creates the matrix, with setters and getter functions 
 
 makeCacheMatrix <- function(x = matrix()) {
-  print("makecachematrix start")
   i <- NULL
   set <- function(y){
-    print("Setting")
     print(y)
     x <<- y
     i <<- NULL
@@ -15,26 +13,24 @@ makeCacheMatrix <- function(x = matrix()) {
   get <- function() x
   setinverse <- function(inverse) i <<- inverse
   getinverse <- function() i
-  print("makecachematrix finish")
   list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)
   #print("makecachematrix finish")
 }
 
 ## solves/stores the matrix inverse 
+##Checks to see if inverse of that matrix is stored, if it is not, then we calculate it 
+## if it is, we pull it from the cache 
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-  print("Cache start")
   i <- x$getinverse()
   if(!is.null(i)){
-    print('got it from memory')
     return(i)
   }
   print("getting")
   data <- x$get()
   i <- solve(data)
   x$setinverse(i)
-  print("Cache finish")
   i
   
 }
