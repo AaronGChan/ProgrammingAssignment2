@@ -1,7 +1,7 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## creates the matrix, with setters and getter functions 
 
 makeCacheMatrix <- function(x = matrix()) {
   print("makecachematrix start")
@@ -20,8 +20,7 @@ makeCacheMatrix <- function(x = matrix()) {
   #print("makecachematrix finish")
 }
 
-
-## Write a short comment describing this function
+## solves/stores the matrix inverse 
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -39,7 +38,8 @@ cacheSolve <- function(x, ...) {
   i
   
 }
+
 f <- rbind(c(1, -1/4), c(-1/4, 1))  
 t <- makeCacheMatrix(f)
 print(cacheSolve(t))
-print(cacheSolve(t))
+
